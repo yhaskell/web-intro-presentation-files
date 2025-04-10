@@ -1,0 +1,10 @@
+sequenceDiagram
+    User->>+Browser: (opens https://server.com)
+    Browser->>+Server: hey can you give me index.html for server.com
+    Server->>Browser: sure here you are
+    Note over Browser: (renders the page)
+    Browser->>Server: Hey I also need cat_image.png
+    Server->>Browser: No can do, no such file on the server
+    Note over Browser: Shows the page.
+    Note over Browser: But instead of cat image, render broken thing
+    Browser->>+User: Done! <3

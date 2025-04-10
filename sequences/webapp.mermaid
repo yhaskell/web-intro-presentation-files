@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant U as User
+    participant B as Browser
+    participant S as Server
+    participant A as API Server
+    U->>+B: (opens https://termin.com/)
+    B->>+S: hey can you give me my app files
+    note over B, S: actually it asks them one by one
+    S->>+B: Sure <3
+    note over B: now the app is running
+    U->>+B: I would like a list of termins
+    B->>+S: GET /api/appointments
+    note over S: This looks like an API Call<br/>Proxy it to API Server!
+    S->>+A: GET /api/appointments
+    A->>+S: /* json response */
+    S->>+B: /* json response */
+    note over B: process response and<br/>render a list of termins
+    B->>+U: here you are! <3

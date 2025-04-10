@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+    participant T as Termin Exec
+    User->>+Browser: (opens https://server.com/termin)
+    Browser->>+Server: hey can you give me `termin` for server.com
+    Note over Server: Oh, `termin` is a CGI exec
+    Server ->>+ T: Someone called, those are the parameters
+    T ->>+ Server: I've calculated, here's HTML response
+    Server->>+Browser: sure here you are
+    Note over Browser: (renders the page)
+    Browser->>+User: Done! <3
