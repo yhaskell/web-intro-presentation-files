@@ -84,6 +84,7 @@ int main() {
             << "<div>\n<label>New task:\n<input name=\"task\" />\n</label>\n"
             << "<button type=\"submit\">Add new task</button>\n"
             << "</div>\n</form>\n"
+            << "<p>Hello everyone!</p>"
             << "</body>\n</html>\n";
 
   return 0;
